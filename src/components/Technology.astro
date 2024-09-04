@@ -38,7 +38,7 @@ import PlayYouTube from '@/icones/PlayYouTube.astro';
             
         </div>
         <div class="col-span-12 lg:col-span-8">
-            <div id="playGroup" class="relative group">
+            <div id="playGroup" class="relative group opacity-0">
                 <img id="coverVideo" loading="lazy" src="images/cover-video-tecnologia.webp" class="w-full h-auto group-hover:brightness-50 transition duration-300 outline outline-8 outline-white" />
                 <button id="playVideo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button">
                     <PlayYouTube extraClass='w-16 h-16 sm:w-24 sm:h-24 text-primary hover:text-white '/>
@@ -82,6 +82,7 @@ import PlayYouTube from '@/icones/PlayYouTube.astro';
         }
 
         function getDimensions() {
+            playGroup.classList.remove('opacity-0');
             imgWidth = coverVideo.clientWidth;  // Ancho de la imagen en píxeles
             const imgHeight = coverVideo.clientHeight; // Alto de la imagen en píxeles
             videoTecnologia.style.width = `${imgWidth}px`;

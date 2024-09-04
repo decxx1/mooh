@@ -16,7 +16,7 @@ import 'aos/dist/aos.css';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<title>MOOH - Modern out of Home</title>
 	</head>
 	<body class="bg-primary">
@@ -34,7 +34,9 @@ import 'aos/dist/aos.css';
 </html>
 <script> 
 	import AOS from "aos"; 
-	AOS.init(); 
+	AOS.init({
+		disable: 'mobile'
+	})
   </script>
 <style is:global>
 @font-face {
