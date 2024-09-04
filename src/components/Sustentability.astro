@@ -1,0 +1,71 @@
+---
+import ButtonStyle from '@/components/ButtonStyle.astro';
+---
+<section class="py-20 px-6">
+    <div class="grid grid-cols-12 gap-4">
+        <div
+            class="col-span-12 lg:col-span-4 text-right md:max-lg:px-6 max-md:px-4 lg:text-left text-lg sm:text-xl lg:text-2xl md:text-2xl leading-6 lg:leading-8 text-white font-bold lg:max-w-96 lg:ml-auto font-arial"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <img src="/images/sustentabilidad-icono.svg" id="icono-reciclaje" class="w-16 md:w-20 h-16 md:h-20 mb-6" alt="icono de reciclaje" />
+            <p>
+                No solo vendemos carteles, todas nuestras telas mesh o pvc son <strong class="text-semiblack">100%</strong> reutilizadas compensando el CO2 emitido en cada campaña.
+                <br/><br/>
+                Tenemos un propósito claro y con cada proyecto aportamos al espacio físico y social en el que nos desarrollamos.
+            </p>
+            <div
+                class="mt-8"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <ButtonStyle 
+                    arrow
+                >
+                    Sustentabilidad
+                </ButtonStyle>
+            </div>
+        </div>
+        <div class="col-span-12 lg:col-span-8">
+            <div 
+                class="max-w-[700px] mx-auto"
+                data-aos="flip-left"
+                data-aos-duration="500"
+                data-aos-delay="1000"
+            >
+                <img loading="lazy" class="border-8 border-white object-cover w-full h-full" src="images/bolsos-sustentables.webp" alt="carteles sustentables" />
+            </div>
+        </div>
+    </div>
+    
+</section>
+<style>
+#icono-reciclaje {
+  transition: transform 0.2s ease-out;
+  transform-origin: bottom left; /* Gira sobre el vértice inferior izquierdo */
+}
+
+</style>
+<script>
+    document.addEventListener('scroll', function () {
+        const icono = document.getElementById('icono-reciclaje');
+        const rect = icono.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Verifica si el ícono está en la ventana visible
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            // Calcula el porcentaje visible del ícono
+            const percentageVisible = (windowHeight - rect.top) / (windowHeight + rect.height) + 0.5;
+            
+            // Limita el porcentaje entre 0 y 1 para evitar que siga girando después de estar centrado
+            const clampedPercentage = Math.min(Math.max(percentageVisible, 0), 1);
+            
+            // Calcula la rotación basada en el porcentaje visible
+            const rotation = 120 * (1 - clampedPercentage);
+            
+            // Aplica la rotación al ícono
+            icono.style.transform = `rotate(${rotation}deg)`;
+        }
+    });
+
+</script>

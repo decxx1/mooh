@@ -1,0 +1,49 @@
+---
+import ButtonStyle from '@/components/ButtonStyle.astro';
+---
+<section class="lg:px-12 px-4 py-16 bg-gradient-to-b from-primary to-secondary">
+    <div class="grid grid-cols-12 gap-4">
+        <div 
+            class="max-md:px-10 col-span-12 lg:col-span-4 text-center lg:text-right text-lg sm:text-xl md:text-2xl leading-6 lg:leading-8 text-white font-bold lg:max-w-80 lg:ml-auto font-arial"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <p>
+                Somos un medio que se destaca por la innovación y <strong class="text-semiblack">tecnología en la vía pública.</strong>
+            </p><br/>
+            <p>
+                <strong class="text-semiblack">Somos</strong> una empresa jóven y dinámica, con foco en la data y la generación de asombro <strong class="text-semiblack">out of home.</strong>
+            </p><br/>
+            <p>
+                Buscamos alto impacto para las marcas y bajo impacto para el medioambiente.
+            </p>
+            <div 
+                class="mt-8"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <ButtonStyle 
+                    arrow
+                >
+                    Espacios
+                </ButtonStyle>
+            </div>
+        </div>
+        <div 
+            class="col-span-12 md:col-span-6 lg:col-span-4 max-h-[630px] px-4 md:px-8 zoom"
+            data-aos="flip-left"
+            data-aos-duration="500"
+            data-aos-delay="500"
+        >
+            <img loading="lazy" class="border-8 border-white object-cover w-full h-full saturate-100 contrast-200 hover:saturate-0 hover:cursor-pointer" src="images/espacios/building-grap-barbie.jpg" alt="building wrap cartel barbie en san diego" />
+        </div>
+        <div 
+            class="col-span-12 md:col-span-6 lg:col-span-4 max-h-[630px] px-4 md:px-8 relative overflow-hidden"
+            data-aos="flip-left"
+            data-aos-duration="500"
+            data-aos-delay="1000"
+        >
+            <img loading="lazy" class="border-8 border-white object-cover w-full h-full saturate-100 contrast-200 hover:saturate-0 hover:cursor-pointer" src="images/espacios/building-wrap-coca-cola-vina.jpg" alt="building wrap coca cola en viña del mar" />
+        </div>
+    </div>
+</section>

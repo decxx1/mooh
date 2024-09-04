@@ -1,0 +1,61 @@
+<header class="h-24 bg-primary px-4 fixed w-full z-50">
+    <div class="flex justify-between">
+        <div class="py-8">
+            <a href="./">
+                <img src="images/logo.svg" alt="Logo de Mooh" class="w-28 h-auto hover:invert" />
+            </a>
+        </div>
+        <div class="relative">
+            <button type="button" class="bars">
+                <div class="relative pb-0">
+                    <span class="line line-1"></span>
+                    <br />
+                    <span class="line line-2"></span>
+                    <br />
+                    <span class="line line-3"></span>
+                    <br />
+                </div>
+            </button>
+        </div>
+    </div>
+</header>
+<style>
+    .bars {
+        height: 80px;
+        padding-top: 16px !important;
+        padding-right: 15px !important;
+        padding-bottom: 10px !important;
+        padding-left: 15px !important;
+        width: 80px;
+        position: absolute !important;
+        top: 0px;
+        bottom: auto;
+        right: 0px;
+        left: auto;
+        cursor: pointer;
+    }
+    
+    .line {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #fff;
+        opacity: 1;
+        -webkit-transition: .1s ease-in-out;
+        -moz-transition: .1s ease-in-out;
+        -o-transition: .1s ease-in-out;
+        transition: .1s ease-in-out;
+    }
+    .line-1 {
+  top: 15px;
+}
+.line-2 {
+  top: 25px;
+  width: 80%;
+}
+.line-3 {
+  top: 35px;
+  width: 50%;
+}
+</style>

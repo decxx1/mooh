@@ -1,0 +1,261 @@
+---
+import ScrollPage from '@/components/ScrollPage.astro';
+---
+<section class="h-screen">
+    <div class="flex flex-col items-center justify-center h-5/6 w-full overflow-hidden">
+        <div class="text-center">
+            <h1 class="font-basement font-black">
+                <span class="outline-text text-6xl md:text-6xl lg:text-8xl text-primary fade-hola-somos">HOLA</span>
+                <span class="outline-text text-6xl md:text-6xl lg:text-8xl text-primary fade-hola-somos delay">&nbsp;SOMOS</span>
+                <span class="max-[322px]:text-6xl text-8xl md:text-[12rem] lg:text-[14rem] fade-mooh text-white">MOOH</span>
+                <span class="text-4xl md:text-5xl lg:text-7xl text-white tracking-wide lg:text-nowrap absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+                    <strong class="fade-y-puedes delay1">(y</strong>
+                    <strong class="fade-y-puedes delay2">puedes</strong>
+                    <strong class="fade-y-puedes delay3">decirnos...)</strong>
+                </span>
+                <span class="text-7xl md:text-[9rem] lg:text-[12rem] font-helvetica fade-mu2 text-white">(...MÚ)</span>
+                <span class="text-7xl md:text-[9rem] lg:text-[12rem] fade-mu1 text-white">(...MÚ)</span>
+            </h1>
+            <div class="absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-6xl lg:text-8xl">
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="outline-text text-primary fade-frase delay-frase-7">MODERN</span>
+                    <span class="outline-text text-primary fade-frase delay-frase-4">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="outline-text text-primary fade-frase delay-frase-8">MEASURABLE</span>
+                    <span class="outline-text text-primary fade-frase delay-frase-3">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="outline-text text-primary fade-frase delay-frase-1">MEMORABLE</span>
+                    <span class="outline-text text-primary fade-frase delay-frase-6">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="outline-text text-primary fade-frase delay-frase-5">MORE</span>
+                    <span class="outline-text text-primary fade-frase delay-frase-2">&nbsp;OOH</span>
+                </h5>
+            </div>
+            <div class="absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-4xl md:text-6xl lg:text-8xl">
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="text-white fade-frase2 delay-frase2-1">MODERN</span>
+                    <span class="text-white fade-frase2 delay-frase2-5">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="text-white fade-frase2 delay-frase2-7">MEASURABLE</span>
+                    <span class="text-white fade-frase2 delay-frase2-4">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="text-white fade-frase2 delay-frase2-6">MEMORABLE</span>
+                    <span class="text-white fade-frase2 delay-frase2-2">&nbsp;OOH</span>
+                </h5>
+                <h5 class="font-basement font-black lg:text-nowrap">
+                    <span class="text-white fade-frase2 delay-frase2-8">MORE</span>
+                    <span class="text-white fade-frase2 delay-frase2-3">&nbsp;OOH</span>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <ScrollPage />
+</section>
+
+
+<style>
+    
+    @media screen and (max-width: 639px) {
+        .outline-text {
+            text-shadow: 
+                1px 1px 0px white,
+                -1px -1px 0px white,
+                1px -1px 0px white,
+                -1px 1px 0px white;
+        }
+    }
+    @media screen and (min-width: 640px) {
+        .outline-text {
+            text-shadow: 
+                2px 2px 0px white,
+                -2px -2px 0px white,
+                2px -2px 0px white,
+                -2px 2px 0px white;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .outline-text {
+            text-shadow: 
+                3px 3px 0px white,
+                -3px -3px 0px white,
+                3px -3px 0px white,
+                -3px 3px 0px white;
+        }
+    }
+
+.fade-hola-somos {
+    opacity: 0;
+    animation: fadeIn 1s forwards, fadeOut 0.5s forwards 1.75s;
+}
+
+.delay {
+    animation-delay: 1s, 1.75s;
+}
+
+.fade-mooh {
+    opacity: 0;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 0s forwards 2s, blink 0.1s step-end 2 alternate 3s, fadeOut 0s forwards 4s;
+}
+
+    .fade-y-puedes {
+        opacity: 0;
+        animation: appearLetterByLetter 1s forwards 3.5s, fadeOut 0s forwards 6s;
+    }
+    .fade-mu1 {
+        opacity: 0;
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 0s forwards 6s, fadeOut 0s forwards 6.8s;
+    }
+    .fade-mu2 {
+        opacity: 0;
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: fadeIn 0s forwards 6.8s, shake 0.1s ease forwards 7s, fadeOut 1s forwards 7.5s;
+    }
+
+    .fade-frase {
+        opacity: 0;
+        animation: fadeIn 1s forwards 7.5s, fadeOut 0.5s forwards 11.5s;
+    }
+    .delay-frase-1 {
+        animation-delay: 8.5s, 11.5s;
+    }
+    .delay-frase-2 {
+        animation-delay: 8.6s, 11.5s;
+    }
+    .delay-frase-3 {
+        animation-delay: 8.8s, 11.5s;
+    }
+    .delay-frase-4 {
+        animation-delay: 9s, 11.5s;
+    }
+    .delay-frase-5 {
+        animation-delay: 9.3s, 11.5s;
+    }
+    .delay-frase-6 {
+        animation-delay: 9.6s, 11.5s;
+    }
+    .delay-frase-7 {
+        animation-delay: 9.8s, 11.5s;
+    }
+    .delay-frase-8 {
+        animation-delay: 9.1s, 11.5s;
+    }
+    .fade-frase2 {
+        opacity: 0;
+        animation: fadeIn 1s forwards 11.5s, fadeOut 0.5s forwards 14s;
+    }
+    .delay-frase2-1 {
+        animation-delay: 11.5s, 14s;
+    }
+    .delay-frase2-2 {
+        animation-delay: 11.6s, 14s;
+    }
+    .delay-frase2-3 {
+        animation-delay: 11.8s, 14s;
+    }
+    .delay-frase2-4 {
+        animation-delay: 12s, 14s;
+    }
+    .delay-frase2-5 {
+        animation-delay: 12.3s, 14s;
+    }
+    .delay-frase2-6 {
+        animation-delay: 12.6s, 14s;
+    }
+    .delay-frase2-7 {
+        animation-delay: 12.8s, 14s;
+    }
+    .delay-frase2-8 {
+        animation-delay: 12.1s, 14s;
+    }
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes appearLetterByLetter {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .delay1 { animation-delay: 4.1s, 6s; }
+    .delay2 { animation-delay: 4.2s, 6s; }
+    .delay3 { animation-delay: 4.3s, 6s; }
+
+
+
+
+    @keyframes shake {
+   0% { transform:translate(-50%,-50%) }
+  1% { transform:translate(calc(-50% + 100px),-50%) }
+  3% { transform:translate(calc(-50% + 50px),-50%) }
+  5% { transform:translate(calc(-50% + -100px),-50%) }
+  7% { transform:translate(calc(-50% + -50px),-50%) }
+  8% { transform:translate(calc(-50% + 100px),-50%) }
+  10% { transform:translate(-50%,-50%) }
+  100% { transform:translate(-50%,-50%) }
+}
+</style>
+<script>
+    //cargar script al cargar el dom
+        function resetAnimations() {
+            const animations = [
+                '.fade-hola-somos', 
+                '.fade-mooh', 
+                '.fade-y-puedes', 
+                '.fade-mu1', 
+                '.fade-mu2', 
+                '.fade-frase', 
+                '.fade-frase2'
+            ];
+
+            animations.forEach(animationClass => {
+                const elements = document.querySelectorAll(animationClass);
+                elements.forEach(element => {
+                    const el = element as HTMLElement;
+                    el.classList.remove(animationClass.split('.').pop());
+                    void el.offsetWidth; // Trigger reflow to restart the animation
+                    el.classList.add(animationClass.split('.').pop());
+                });
+            });
+        }
+        setInterval(resetAnimations, 14000);
+</script>

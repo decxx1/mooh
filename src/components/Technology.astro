@@ -1,0 +1,114 @@
+---
+import ButtonStyle from '@/components/ButtonStyle.astro';
+import PlayYouTube from '@/icones/PlayYouTube.astro';
+---
+<section class="py-20 px-6 bg-gradient-to-b from-primary to-secondary">
+    <div class="grid grid-cols-12 mb-32">
+        <div class="lg:col-span-4 md:col-span-6 col-span-12 mx-auto overflow-hidden w-80 text-nowrap relative max-md:hidden">
+            <h3 class="marquee-text text-center text-white font-black text-6xl font-basement uppercase ">* Innovación & tecnología</h2>
+        </div>
+        <div class="lg:col-span-4 md:col-span-6 col-span-12 mx-auto overflow-hidden w-80 text-nowrap relative">
+            <h2 class="marquee-text text-center text-white font-black text-6xl font-basement uppercase ">* Innovación & tecnología</h2>
+        </div>
+        <div class="lg:col-span-4 col-span-12  mx-auto overflow-hidden w-80 text-nowrap relative max-lg:hidden">
+            <h3 class="marquee-text text-center text-white font-black text-6xl font-basement uppercase ">* Innovación & tecnología</h2>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-4">
+        <div 
+            class="py-20 col-span-12 lg:col-span-4 text-right md:max-lg:px-6 max-md:px-4 lg:text-left text-lg sm:text-xl lg:text-2xl md:text-2xl leading-6 lg:leading-8 text-white font-bold lg:max-w-96 lg:ml-auto font-arial"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <p>
+                Somos los únicos en trabajar con <strong class="text-semiblack">VIDEO ANALYTICS</strong> entregando a nuestros clientes información en tiempo real de los flujos vehiculares y de personas que transitan por nuestras locaciones.
+            </p>
+            <div
+                class="mt-8"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <ButtonStyle 
+                    arrow
+                >
+                    Descubrí
+                </ButtonStyle>
+            </div>
+            
+        </div>
+        <div class="col-span-12 lg:col-span-8">
+            <div id="playGroup" class="relative group">
+                <img id="coverVideo" loading="lazy" src="images/cover-video-tecnologia.webp" class="w-full h-auto group-hover:brightness-50 transition duration-300 outline outline-8 outline-white" />
+                <button id="playVideo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button">
+                    <PlayYouTube extraClass='w-16 h-16 sm:w-24 sm:h-24 text-primary hover:text-white '/>
+                </button>
+            </div>
+            <div id="video-tecnologia" class="outline outline-8 outline-white hidden"></div> 
+        </div>
+    </div>
+</section>
+<style>
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%; /* Se asegura de que el texto inicie fuera del contenedor */
+      animation: marquee 10s linear infinite; /* Duración y estilo de la animación */
+    }
+    
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%); /* Inicia en su posición original */
+      }
+      100% {
+        transform: translateX(-100%); /* Se desplaza completamente hacia la izquierda */
+      }
+    }
+    
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const playVideo: HTMLElement = document.getElementById('playVideo');
+        const playGroup: HTMLElement = document.getElementById('playGroup');
+        const coverVideo: HTMLImageElement = document.querySelector("#coverVideo");
+        const videoTecnologia: HTMLElement = document.getElementById('video-tecnologia');
+        let imgWidth;
+        if (coverVideo.complete) {
+            // La imagen ya está cargada (posiblemente desde caché)
+            getDimensions();
+        } else {
+            // La imagen no se ha cargado todavía
+            coverVideo.addEventListener("load", getDimensions);
+        }
+
+        function getDimensions() {
+            imgWidth = coverVideo.clientWidth;  // Ancho de la imagen en píxeles
+            const imgHeight = coverVideo.clientHeight; // Alto de la imagen en píxeles
+            videoTecnologia.style.width = `${imgWidth}px`;
+            videoTecnologia.style.height = `${imgHeight}px`;
+            playVideo.addEventListener('click', loadVimeoPlayer );
+        
+        }
+        async function loadVimeoPlayer() {
+            try {
+                playGroup.classList.add('hidden');
+                // Importa dinámicamente el módulo '@vimeo/player'
+                const { default: Player } = await import('@vimeo/player');
+
+                //código del reproductor vimeo
+                const optionsPlayer = {
+                    id: 715730408,
+                    width: imgWidth,
+                    loop: false
+                };
+
+                const player = new Player('video-tecnologia', optionsPlayer);
+
+                player.play();
+                videoTecnologia.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error al cargar el módulo @vimeo/player:', error);
+            }
+        }
+    });
+</script>

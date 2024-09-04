@@ -1,0 +1,15 @@
+---
+import Arrow from '@/icones/Arrow.astro';
+interface Props {
+    arrow?: boolean;
+    dataModalHide?: string;
+    id?: string;
+}
+const { arrow, dataModalHide, id } = Astro.props
+---
+<button id={id} data-modal-hide={dataModalHide} type="button" class="uppercase px-7 py-4 text-semiblack border-2 border-semiblack rounded-full text-sm font-basement hover:text-white">
+    <slot />
+    {arrow && 
+        <Arrow extraClass='w-8 h-8 inline' />
+    }
+</button>

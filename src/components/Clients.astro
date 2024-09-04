@@ -1,0 +1,48 @@
+---
+import images from '@/hooks/clients.json';
+---
+<section class="py-20 bg-white">
+    <div class="grid grid-cols-12 mb-4">
+        <div class="lg:col-span-4 md:col-span-6 col-span-12 mx-auto overflow-hidden w-44 text-nowrap relative max-md:hidden">
+            <h3 class="marquee-text text-center text-primary font-black text-6xl font-basement uppercase ">* Clientes </h2>
+        </div>
+        <div class="lg:col-span-4 md:col-span-6 col-span-12 mx-auto overflow-hidden w-44 text-nowrap relative">
+            <h2 class="marquee-text text-center text-primary font-black text-6xl font-basement uppercase ">* Clientes </h2>
+        </div>
+        <div class="lg:col-span-4 col-span-12  mx-auto overflow-hidden w-44 text-nowrap relative max-lg:hidden">
+            <h3 class="marquee-text text-center text-primary font-black text-6xl font-basement uppercase ">* Clientes </h2>
+        </div>
+    </div>
+   
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 mx-20">
+        {images.map(image => (
+            <img
+              loading="lazy"
+              class="w-full h-full"
+              src={image.src}
+              alt={image.alt}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            />
+        ))}
+    </div>
+</section>
+
+<style>
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%; /* Se asegura de que el texto inicie fuera del contenedor */
+  animation: marquee 7s linear infinite; /* Duración y estilo de la animación */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* Inicia en su posición original */
+  }
+  100% {
+    transform: translateX(-100%); /* Se desplaza completamente hacia la izquierda */
+  }
+}
+
+</style>

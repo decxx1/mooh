@@ -1,0 +1,58 @@
+---
+import Instagram from "@/icones/Instagram.astro";
+import Linkedin from "@/icones/Linkedin.astro";
+---
+<footer class="py-32 px-10 bg-secondary">
+    <div class="grid grid-cols-1 md:grid-cols-3 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
+        <div 
+            class="flex justify-center text-center md:text-left max-md:mb-12 max-md:order-2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+        >
+            <div>
+                <h3 class="text-semiblack font-arial text-xl font-bold mb-4">Estamos en:</h3>
+                <p class="text-white font-arial font-bold text-lg">Av. Apoquindo 2930, <br/> Piso 6 / Las Condes Santiago</p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col justify-center items-center max-md:mb-12 max-md:order-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="0"
+        >
+            <a href="./">
+                <img src="images/logo-completo.svg" alt="Logo de Mooh" class="hover:invert w-52 h-auto" />
+            </a>
+        </div>
+        <div 
+            class="flex justify-center text-center md:text-left max-md:order-3"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+        >
+            <div>
+                <h3 class="text-semiblack font-arial text-xl font-bold mb-4">Síguenos</h3>
+                <div class="flex">
+                    <a href="https://www.instagram.com/somosmooh/" target="_blank" rel="noreferrer noopener" class="">
+                        <Instagram extraClass="w-9 h-9 text-white" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/somosmooh/" target="_blank" rel="noreferrer noopener" >
+                        <Linkedin extraClass="w-9 h-9 text-white" />
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</footer>
+<div class="pb-10 text-center text-semiblack text-sm font-arial bg-secondary">
+    <p>
+        Desarrollado por:
+        <a href="https://manejoweb.com.ar" class="font-bold hover:text-white" target="_blank">Manejo Web </a> 
+
+        Diseñado por:
+        <a href="https://www.conamor.org/" class="font-bold hover:text-white" rel="noopener noreferrer" target="_blank">Con Amor</a>
+    </p>
+</div>

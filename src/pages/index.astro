@@ -1,0 +1,53 @@
+---
+import Hero from '@/components/Hero.astro';
+import Intro from '@/components/Intro.astro';
+import About from '@/components/About.astro';
+import Clients from '@/components/Clients.astro';
+import Sustentability from '@/components/Sustentability.astro';
+import Technology from '@/components/Technology.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+
+import 'aos/dist/aos.css'; 
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>MOOH - Modern out of Home</title>
+	</head>
+	<body class="bg-primary">
+		<Header />
+		<Hero />
+		<Intro />
+		<div class="bg-secondary">
+			<About />
+		</div>
+		<Clients />
+		<Sustentability />
+		<Technology />
+		<Footer />
+	</body>
+</html>
+<script> 
+	import AOS from "aos"; 
+	AOS.init(); 
+  </script>
+<style is:global>
+@font-face {
+    font-family: 'Helvetica LT Black';
+    src: url('/fonts/Helvetica-LT-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Basement Grotesque Black';
+    src: url('/fonts/BasementGrotesque-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+</style>
